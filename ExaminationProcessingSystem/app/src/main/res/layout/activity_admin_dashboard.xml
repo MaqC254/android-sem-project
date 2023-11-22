@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/dashboardTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin Dashboard"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"/>
+
+    <!-- Report Buttons -->
+    <Button
+        android:id="@+id/btnSemesterPassList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Semester Pass List"
+        android:layout_below="@id/dashboardTitle"
+        android:layout_marginTop="16dp"
+        android:onClick="onButtonClick"/>
+
+    <Button
+        android:id="@+id/btnYearPassList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Year Pass List"
+        android:layout_below="@id/btnSemesterPassList"
+        android:layout_marginTop="16dp"
+        android:onClick="onButtonClick"/>
+
+    <Button
+        android:id="@+id/btnYearFailedStudents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Year Failed Students (Supplementary)"
+        android:layout_below="@id/btnYearPassList"
+        android:layout_marginTop="16dp"
+        android:onClick="onButtonClick"/>
+
+    <Button
+        android:id="@+id/btnFailsInSemester"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fails in the Semester"
+        android:layout_below="@id/btnYearFailedStudents"
+        android:layout_marginTop="16dp"
+        android:onClick="onButtonClick"/>
+
+    <Button
+        android:id="@+id/btnSpecialExamsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Special Exams List"
+        android:layout_below="@id/btnFailsInSemester"
+        android:layout_marginTop="16dp"
+        android:onClick="onButtonClick"/>
+
+    <Button
+        android:id="@+id/btnMissingCatsAndExams"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Missing Cats and Exams Student List"
+        android:layout_below="@id/btnSpecialExamsList"
+        android:layout_marginTop="16dp"
+        android:onClick="onButtonClick"/>
+
+    <Button
+        android:id="@+id/btnRepeaterOfCourse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Repeaters of a Course"
+        android:layout_below="@id/btnMissingCatsAndExams"
+        android:layout_marginTop="16dp"
+        android:onClick="onButtonClick"/>
+
+    <Button
+        android:id="@+id/btnPrintSummariesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Print Summaries List"
+        android:layout_below="@id/btnRepeaterOfCourse"
+        android:layout_marginTop="16dp"
+        android:onClick="onButtonClick"/>
+
+    <!-- Edit Marks Button -->
+    <Button
+        android:id="@+id/btnEditMarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Marks"
+        android:layout_below="@id/btnPrintSummariesList"
+        android:layout_marginTop="16dp"
+        android:onClick="onButtonClick"/>
+
+</RelativeLayout>
