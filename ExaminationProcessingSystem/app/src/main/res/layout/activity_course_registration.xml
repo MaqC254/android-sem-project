@@ -4,4 +4,153 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CourseRegistrationActivity"/>
+    tools:context=".CourseRegistrationActivity">
+
+    <CheckBox
+        android:id="@+id/unit1"
+        android:layout_width="328dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="258dp"
+        android:text="Unit 1"
+        app:layout_constraintBottom_toTopOf="@+id/unit7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <CheckBox
+        android:id="@+id/unit2"
+        android:layout_width="328dp"
+        android:layout_height="45dp"
+        android:text="Unit 2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit1" />
+
+    <CheckBox
+        android:id="@+id/unit3"
+        android:layout_width="328dp"
+        android:layout_height="45dp"
+        android:text="Unit 3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit2" />
+
+    <CheckBox
+        android:id="@+id/unit4"
+        android:layout_width="328dp"
+        android:layout_height="45dp"
+        android:text="Unit 4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit3" />
+
+    <CheckBox
+        android:id="@+id/unit5"
+        android:layout_width="328dp"
+        android:layout_height="45dp"
+        android:text="Unit 5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit4" />
+
+    <CheckBox
+        android:id="@+id/checkBox8"
+        android:layout_width="328dp"
+        android:layout_height="45dp"
+        android:text="Unit 6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit5" />
+
+    <CheckBox
+        android:id="@+id/unit7"
+        android:layout_width="328dp"
+        android:layout_height="0dp"
+        android:text="Unit 7"
+        app:layout_constraintBottom_toTopOf="@+id/unit8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit1" />
+
+    <CheckBox
+        android:id="@+id/unit11"
+        android:layout_width="328dp"
+        android:layout_height="0dp"
+        android:text="Unit 11"
+        app:layout_constraintBottom_toTopOf="@+id/unit12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit10" />
+
+    <CheckBox
+        android:id="@+id/unit12"
+        android:layout_width="328dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="118dp"
+        android:text="Unit 12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit11" />
+
+    <CheckBox
+        android:id="@+id/unit10"
+        android:layout_width="328dp"
+        android:layout_height="0dp"
+        android:text="Unit 10"
+        app:layout_constraintBottom_toTopOf="@+id/unit11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit9" />
+
+    <CheckBox
+        android:id="@+id/unit8"
+        android:layout_width="328dp"
+        android:layout_height="0dp"
+        android:text="Unit 8"
+        app:layout_constraintBottom_toTopOf="@+id/unit9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit7" />
+
+    <CheckBox
+        android:id="@+id/unit9"
+        android:layout_width="328dp"
+        android:layout_height="0dp"
+        android:text="Unit 9"
+        app:layout_constraintBottom_toTopOf="@+id/unit10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit8" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="11dp"
+        android:text="Semester 1 units"
+        app:layout_constraintBottom_toTopOf="@+id/unit1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Semester 2 units"
+        app:layout_constraintBottom_toTopOf="@+id/unit7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unit12" />
+</androidx.constraintlayout.widget.ConstraintLayout>
