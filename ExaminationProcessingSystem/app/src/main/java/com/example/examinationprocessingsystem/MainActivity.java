@@ -17,13 +17,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btn = findViewById(R.id.button2);
+        Button btn3 = findViewById(R.id.button3);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, StudentSignUpActivity.class);
+                Intent intent = new Intent(MainActivity.this, StudentLoginActivity.class);
                 startActivity(intent);
             }
         });
-
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, StaffLoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
