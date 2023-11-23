@@ -85,7 +85,6 @@ public class CourseRegistrationActivity extends AppCompatActivity {
                                                     @Override
                                                     public void onSuccess(DocumentReference documentReference) {
                                                         System.out.println("Marks added successfully");
-
                                                     }
                                                 })
                                                 .addOnFailureListener(new OnFailureListener() {
@@ -96,9 +95,11 @@ public class CourseRegistrationActivity extends AppCompatActivity {
                                                 });
                                     }
                                 }
-
+                                Intent dashboardIntent = new Intent(CourseRegistrationActivity.this, StudentDashboardActivity.class);
+                                dashboardIntent.putExtra("id", documentId);
                                 // Successfully updated the document
                                 Toast.makeText(CourseRegistrationActivity.this, "Course registration successful", Toast.LENGTH_SHORT).show();
+                                startActivity(dashboardIntent);
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
