@@ -14,12 +14,20 @@
         android:layout_marginBottom="32dp" />
 
     <EditText
-        android:id="@+id/editTextCourse"
+        android:id="@+id/editTextUnit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewTitle"
         android:layout_marginTop="16dp"
-        android:hint="Course" />
+        android:hint="Unit" />
+
+    <EditText
+        android:id="@+id/editTextCourse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextUnit"
+        android:layout_marginTop="16dp"
+        android:hint="Reg No" />
 
     <EditText
         android:id="@+id/editTextAssignment1"
@@ -57,11 +65,20 @@
         android:hint="CAT 2"
         android:inputType="numberDecimal" />
 
+    <EditText
+        android:id="@+id/editTextExam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextCat2"
+        android:layout_marginTop="16dp"
+        android:hint="Exam"
+        android:inputType="numberDecimal" />
+
     <Button
         android:id="@+id/buttonSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextCat2"
+        android:layout_below="@id/editTextExam"
         android:layout_marginTop="32dp"
         android:text="Submit" />
 
