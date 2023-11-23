@@ -15,19 +15,10 @@
         android:layout_marginBottom="24dp"/>
 
     <EditText
-        android:id="@+id/editTextUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewTitle"
-        android:layout_marginTop="16dp"
-        android:hint="Username"
-        android:inputType="text"/>
-
-    <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextUsername"
+        android:layout_below="@id/editTextRegistrationNumber"
         android:layout_marginTop="16dp"
         android:hint="Password"
         android:inputType="textPassword"/>
@@ -36,16 +27,16 @@
         android:id="@+id/editTextRegistrationNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPassword"
+        android:layout_below="@id/textViewTitle"
         android:layout_marginTop="16dp"
-        android:hint="Registration Number"
+        android:hint="Email"
         android:inputType="text"/>
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextRegistrationNumber"
+        android:layout_below="@id/editTextPassword"
         android:layout_marginTop="24dp"
         android:text="Login"/>
 

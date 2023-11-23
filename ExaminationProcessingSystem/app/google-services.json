@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "497365268769",
+    "project_id": "examinationprocessingsystem",
+    "storage_bucket": "examinationprocessingsystem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497365268769:android:87e24c5f34420139d46660",
+        "android_client_info": {
+          "package_name": "com.example.examinationprocessingsystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEelIHboa4s_ifgIsA7Ulmz5HxDmNiMCI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

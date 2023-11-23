@@ -54,15 +54,6 @@
         app:layout_constraintTop_toBottomOf="@+id/unit4" />
 
     <CheckBox
-        android:id="@+id/checkBox8"
-        android:layout_width="328dp"
-        android:layout_height="45dp"
-        android:text="Unit 6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/unit5" />
-
-    <CheckBox
         android:id="@+id/unit7"
         android:layout_width="328dp"
         android:layout_height="0dp"
