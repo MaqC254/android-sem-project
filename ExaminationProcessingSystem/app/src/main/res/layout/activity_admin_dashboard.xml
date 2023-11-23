@@ -66,8 +66,7 @@
         android:layout_height="wrap_content"
         android:text="Missing Cats and Exams Student List"
         android:layout_below="@id/btnSpecialExamsList"
-        android:layout_marginTop="16dp"
-        android:onClick="onButtonClick"/>
+        android:layout_marginTop="16dp" />
 
     <Button
         android:id="@+id/btnRepeaterOfCourse"

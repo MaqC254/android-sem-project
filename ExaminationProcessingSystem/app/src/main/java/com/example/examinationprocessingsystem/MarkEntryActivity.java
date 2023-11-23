@@ -91,6 +91,8 @@ public class MarkEntryActivity extends AppCompatActivity {
                                                                             @Override
                                                                             public void onSuccess(Void aVoid) {
                                                                                 Toast.makeText(MarkEntryActivity.this, "Updated marks successfully", Toast.LENGTH_SHORT).show();
+                                                                                //to avoid changing of marks
+                                                                                button.setEnabled(false);
                                                                             }
                                                                         }).addOnFailureListener(new OnFailureListener() {
                                                                             @Override
