@@ -9,16 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,6 +26,11 @@ public class MarkEntryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mark_entry);
+
+        Intent intent = getIntent();
+        String courseId = intent.getStringExtra("course");
+        System.out.println("course ->"  + courseId);
+
         EditText reg_no = findViewById(R.id.editTextCourse);
         EditText ass1 = findViewById(R.id.editTextAssignment1);
         EditText ass2 = findViewById(R.id.editTextAssignment2);
@@ -60,7 +62,7 @@ public class MarkEntryActivity extends AppCompatActivity {
                                         String assOneGrade = String.valueOf(ass1.getText());
                                         String assTwoGrade = String.valueOf(ass2.getText());
                                         String examGrade = String.valueOf(exam.getText());
-                                        int total = (int) ((int) (Integer.parseInt(catOneGrade) + Integer.parseInt(catTwoGrade) + Integer.parseInt(assOneGrade) + Integer.parseInt(assTwoGrade)) * 0.4 + (Integer.parseInt(examGrade)) * 0.6);
+                                        int total = (int) ((int) (Integer.parseInt(catOneGrade) + Integer.parseInt(catTwoGrade) + Integer.parseInt(assOneGrade) + Integer.parseInt(assTwoGrade)) * 0.4 + (Integer.parseInt(examGrade)));
 
                                         Map<String, Object> marks = new HashMap<>();
                                         marks.put("cat1", catOneGrade);
@@ -68,11 +70,10 @@ public class MarkEntryActivity extends AppCompatActivity {
                                         marks.put("ass1", assOneGrade);
                                         marks.put("ass2", assTwoGrade);
                                         marks.put("exam", examGrade);
-                                        marks.put("total", total);
-                                        marks.put("average", "-");
-                                        marks.put("pass", "");
+                                        marks.put("total", String.valueOf(total));
+                                        marks.put("pass", total >= 70 ? "pass" : "fail" );
                                         db.collection("marks")
-                                                .whereEqualTo("unit_code", "Unit 2")
+                                                .whereEqualTo("unit_code", courseId)
                                                 .whereEqualTo("student", documentId)
                                                 .get()
                                                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -103,8 +104,6 @@ public class MarkEntryActivity extends AppCompatActivity {
                                                 });
                                     }
                                 }
-
-
                             }
                         });
             }

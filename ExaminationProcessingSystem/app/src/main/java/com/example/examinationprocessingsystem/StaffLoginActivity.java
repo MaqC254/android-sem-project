@@ -20,11 +20,13 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.Map;
 import java.util.Objects;
 
 public class StaffLoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    String courseId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,10 +77,38 @@ public class StaffLoginActivity extends AppCompatActivity {
                                                                 Intent dashboardIntent = new Intent(StaffLoginActivity.this, AdminDashboardActivity.class);
                                                                 dashboardIntent.putExtra("id", documentId);
                                                                 startActivity(dashboardIntent);
-                                                            } else if(isAdmin != null && Objects.equals(isAdmin.toString(), "false")){
-                                                                Intent dashboardIntent = new Intent(StaffLoginActivity.this, MarkEntryActivity.class);
-                                                                startActivity(dashboardIntent);
-                                                                startActivity(dashboardIntent);
+                                                            } else if (isAdmin != null && Objects.equals(isAdmin.toString(), "false")) {
+
+                                                                db.collection("courses")
+                                                                        .whereEqualTo("lecturer", email)
+                                                                        .limit(1)
+                                                                        .get()
+                                                                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                                            @Override
+                                                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                                                if (task.isSuccessful()) {
+                                                                                    if (!task.getResult().isEmpty()) {
+                                                                                        // Access the first document in the result
+                                                                                        DocumentSnapshot document = task.getResult().getDocuments().get(0);
+
+                                                                                        // Access the document data
+                                                                                        String unitCode = document.getString("unit_code");
+
+                                                                                        // Now you can use the unitCode as needed
+                                                                                        Intent dashboardIntent = new Intent(StaffLoginActivity.this, MarkEntryActivity.class);
+                                                                                        dashboardIntent.putExtra("course", unitCode);
+                                                                                        startActivity(dashboardIntent);
+                                                                                    } else {
+                                                                                        System.out.println("No documents found for the specified email.");
+                                                                                    }
+                                                                                } else {
+                                                                                    // Handle failure
+                                                                                    System.err.println("Error fetching documents: " + task.getException());
+                                                                                }
+                                                                            }
+                                                                        });
+
+
                                                             }
 
                                                         } else {

@@ -14,18 +14,10 @@
         android:layout_marginBottom="32dp" />
 
     <EditText
-        android:id="@+id/editTextUnit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewTitle"
-        android:layout_marginTop="16dp"
-        android:hint="Unit" />
-
-    <EditText
         android:id="@+id/editTextCourse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextUnit"
+        android:layout_below="@id/textViewTitle"
         android:layout_marginTop="16dp"
         android:hint="Reg No" />
 

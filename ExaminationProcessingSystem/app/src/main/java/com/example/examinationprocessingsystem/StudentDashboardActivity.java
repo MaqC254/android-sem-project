@@ -92,23 +92,24 @@ public class StudentDashboardActivity extends AppCompatActivity {
                                 // Get unit_code and pass from the document
                                 String unitCode = document.getString("unit_code");
                                 String pass = document.getString("pass");
-                                String average = document.getString("average");
+                                String average = document.getString("total");
 
                                 // Calculate total marks based on your logic
                                 // For simplicity, assuming you have a field called "total" in your document
                                 try {
-                                    total = document.getLong("total").intValue();
+                                    total = (int) Integer.parseInt(document.getString("total"));
+                                    numberOfCourses++;
                                 } catch (Exception e) {
                                     total = 0;
                                 }
 
                                 // Display unit_code and pass in your list item (customize as needed)
-                                String listItem = String.format("%-20s - %-10s %s", unitCode, average, pass);
+                                String listItem = String.format("%-25s  %-15s %-7s", unitCode, average, pass);
                                 coursesList.add(listItem);
 
                                 // Calculate total marks and number of courses
                                 totalMarks += total;
-                                numberOfCourses++;
+
                             }
 
                             // Display courses in the ListView
@@ -128,7 +129,7 @@ public class StudentDashboardActivity extends AppCompatActivity {
     private void calculateAndDisplayMeanGrade(int totalMarks, int numberOfCourses, TextView textViewMeanGrade, TextView textViewPassFail) {
         // Calculate mean grade based on your logic
         // For simplicity, assuming you have a field called "average" in your document
-        double meanGrade = totalMarks / (double) numberOfCourses;
+        double meanGrade = totalMarks/ (double) numberOfCourses;
 
         // Display mean grade
         textViewMeanGrade.setText("Mean Grade: " + meanGrade);
